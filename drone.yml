@@ -1,0 +1,22 @@
+kind: pipeline
+type: docker
+name: linux-amd64
+
+platform:
+  arch: amd64
+  os: linux
+
+steps:
+  -  name: test
+     image: alpine/git
+     image: java:8-jdk
+     pull: true
+     
+     commands:
+       - chmod 777 ./Run.command
+       - chmod 777 ./lib/Drivers/chromedriver
+       - ./Run.command -run -project_location "Projects/DemoProject" -scenario "AngularJS_Support" -testcase "AngularJS_Test" -browser "Chrome Headless"
+when:
+    event:
+      - push
+      - tag
