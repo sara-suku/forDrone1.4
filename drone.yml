@@ -9,7 +9,7 @@ platform:
 steps:
   -  name: test
      image: alpine/git
-     image: oraclejdk11
+     image: java:latest
      pull: true
      
      commands:
