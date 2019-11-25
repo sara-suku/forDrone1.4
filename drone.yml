@@ -7,15 +7,17 @@ platform:
   os: linux
 
 steps:
-  - name: test123
-    commands:
-      - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
-      - . ./install-jdk.sh --feature 11
 
   -  name: test
      image: alpine/git
      pull: true
      
+  -  name: test123
+     commands:
+       - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
+       - . ./install-jdk.sh --feature 11
+       
+  - name: execution     
      commands:        
        - java -version
        - chmod 777 ./Run.command
