@@ -1,6 +1,6 @@
 services:
   selenium:
-      image: selenium/standalone-chrome:3.141.59-vanadium
+           image: selenium/standalone-chrome:3.141.59-vanadium
 
 kind: pipeline
 type: docker
