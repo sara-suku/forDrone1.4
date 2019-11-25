@@ -13,6 +13,7 @@ steps:
      image: openjdk:11.0.2
      image: selenium/standalone-chrome
      pull: true
+     
      commands:
        - chmod 777 ./Run.command
        - chmod 777 ./lib/Drivers/chromedriver
