@@ -1,7 +1,3 @@
-@echo off
-pushd %~dp0
-
-rem For App to load lib from
 SET APP_CLASSPATH=lib\*;lib\clib\*
 
 IF "%~1" == "" (
