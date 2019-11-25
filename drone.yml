@@ -16,8 +16,9 @@ steps:
      commands:
        - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
        - . ./install-jdk.sh --feature 11
+       - java -version
        
-  - name: execution     
+  - name: cits     
      commands:        
        - java -version
        - chmod 777 ./Run.command
