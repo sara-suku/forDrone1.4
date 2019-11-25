@@ -1,28 +1,17 @@
 services:
   selenium:
-    image: selenium/standalone-chrome:3.141.59-vanadium
+    image: selenium/hub
 
-kind: pipeline
-type: docker
-name: linux-amd64
+  chrome:
+    image: selenium/node-chrome
+    environment:
+      HUB_PORT_4444_TCP_ADDR: selenium
+      HUB_PORT_4444_TCP_PORT: 4444
+      DISPLAY: ":99.0"
 
-platform:
-  arch: amd64
-  os: linux
-  
-steps:
-  -  name: test
-     image: alpine/git
-     image: openjdk:11.0.2     
-     pull: true
-     
-     commands:
-       - chmod 777 ./Run.command
-       - chmod 777 ./lib/Drivers/chromedriver
-       - ./Run.command -run -project_location "Projects/DemoProject" -scenario "AngularJS_Support" -testcase "AngularJS_Test" -browser "Chrome"
-       
-    
-when:
-    event:
-      - push
-      - tag
+  firefox:
+    image: selenium/node-firefox
+    environment:
+      HUB_PORT_4444_TCP_ADDR: selenium
+      HUB_PORT_4444_TCP_PORT: 4444
+      DISPLAY: ":98.0"
