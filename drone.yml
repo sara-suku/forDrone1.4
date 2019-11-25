@@ -31,7 +31,7 @@ steps:
           [ ! -e "/usr/bin/$base" ]; \
           alternatives --install "/usr/bin/$base" "$base" "$bin" 20000; \
         done; \
-      # -Xshare:dump will create a CDS archive to improve startup in subsequent runs	
+     
        - java -Xshare:dump; \
        - java --version; \
        - javac --version
