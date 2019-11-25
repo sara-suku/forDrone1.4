@@ -18,7 +18,7 @@ steps:
        - . ./install-jdk.sh --feature 11
        - java -version
        
-  - name: cits     
+  -  name: cits     
      commands:        
        - java -version
        - chmod 777 ./Run.command
