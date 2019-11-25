@@ -15,7 +15,8 @@ steps:
   -  name: test123
      commands:
        - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
-       - . ./install-jdk.sh --feature 11
+       - ls
+       - ./install-jdk.sh --feature 11
        - java -version   
        - java -version
        - chmod 777 ./Run.command
