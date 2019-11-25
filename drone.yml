@@ -8,6 +8,7 @@ platform:
 
 steps:
   -  name: test
+     image: alpine/git
      image: openjdk:11
      pull: true
      
