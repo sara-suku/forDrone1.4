@@ -16,12 +16,6 @@ steps:
      commands:
        - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
        - ls
-       - ./install-jdk.sh --feature 11
-       - java -version   
-       - java -version
-       - chmod 777 ./Run.command
-       - chmod 777 ./lib/Drivers/chromedriver
-       - ./Run.command -run -project_location "Projects/DemoProject" -scenario "AngularJS_Support" -testcase "AngularJS_Test" -browser "Chrome Headless"
 when:
     event:
       - push
