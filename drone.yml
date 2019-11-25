@@ -9,7 +9,6 @@ platform:
 steps:
   - name: test123
     image: docker:stable-dind
-    privileged: true
     commands:
      - ENV JAVA_VERSION=11.0.5 \
        - JAVA_PKG=jdk-11.0.5_linux-x64_bin.tar.gz \
