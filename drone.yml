@@ -16,10 +16,7 @@ steps:
      commands:
        - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
        - . ./install-jdk.sh --feature 11
-       - java -version
-       
-  -  name: cits     
-     commands:        
+       - java -version   
        - java -version
        - chmod 777 ./Run.command
        - chmod 777 ./lib/Drivers/chromedriver
