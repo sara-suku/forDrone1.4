@@ -7,13 +7,11 @@ platform:
   os: linux
 
 steps:
-  -  name: test
-     image: alpine/git
-     pull: true
-     
-     commands:
-     
-       - ENV JAVA_VERSION=11.0.5 \
+  - name: test123
+    image: docker:stable-dind
+    privileged: true
+    commands:
+     - ENV JAVA_VERSION=11.0.5 \
        - JAVA_PKG=jdk-11.0.5_linux-x64_bin.tar.gz \
        - JAVA_SHA256=387e60bdad6d6fc20d41cd712536f0f7adbb086fa73bc3cb225b3edad0bfa0a6 \
        - JAVA_HOME=/usr/java/jdk-11
@@ -39,7 +37,12 @@ steps:
        - javac --version
 
        - CMD ["jshell"]
+
+  -  name: test
+     image: alpine/git
+     pull: true
      
+     commands:        
        - java -version
        - chmod 777 ./Run.command
        - chmod 777 ./lib/Drivers/chromedriver
