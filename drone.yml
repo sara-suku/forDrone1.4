@@ -6,11 +6,13 @@ platform:
   arch: amd64
   os: linux
   
+services:
+  selenium:
+      image: selenium/standalone-chrome:3.141.59-vanadium
      
 steps:
   -  name: test
      image: alpine/git
-     image: selenium/standalone-chrome
      image: openjdk:11.0.2     
      pull: true
      
