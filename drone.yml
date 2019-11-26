@@ -1,14 +1,17 @@
 kind: pipeline
 name: default
 
-services:
+services:  
+  
   selenium:
     image: selenium/hub
+  
   chrome:
     image: selenium/node-chrome:latest
     environment:
       HUB_PORT_4444_TCP_ADDR: selenium
       HUB_PORT_4444_TCP_PORT: "4444"
+  
   firefox:
     image: selenium/node-firefox:latest
     environment:
