@@ -1,17 +1,5 @@
 kind: pipeline
-name: linux-amd64
-
-platform:
-  arch: amd64
-  os: linux
-
-pipeline:
-  test:
-    image: alpine/git
-    image: java:8-jdk
-    pull: true
-    commands:
-      - java -version
+name: default
 
 services:
   selenium:
@@ -27,3 +15,15 @@ services:
       HUB_PORT_4444_TCP_ADDR: latest
       HUB_PORT_4444_TCP_PORT: "4444"
       DISPLAY: ":98.0"
+      
+platform:
+  arch: amd64
+  os: linux
+
+pipeline:
+  test:
+    image: alpine/git
+    image: java:8-jdk
+    pull: true
+    commands:
+      - java -version
