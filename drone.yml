@@ -9,14 +9,13 @@ platform:
 steps:
   -  name: test
      image: alpine/git
-     image: openjdk:11.0.2
      image: selenium/standalone-chrome
+     image: openjdk:11.0.2
      pull: true
      
      commands:
-       - chmod 777 ./Run.command
        - chmod 777 ./lib/Drivers/chromedriver
-       - ./Run.command -run -project_location "Projects/DemoProject" -scenario "AngularJS_Support" -testcase "AngularJS_Test" -browser "Firefox"
+       - chmod 777 ./Run.command -run -project_location "Projects/DemoProject" -scenario "AngularJS_Support" -testcase "AngularJS_Test" -browser "Chrome Headless"
 when:
     event:
       - push
