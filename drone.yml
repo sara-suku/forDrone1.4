@@ -9,7 +9,8 @@ platform:
 steps:
   -  name: test
      image: alpine/git
-     image: selenium/standalone-chrome
+     image: selenium/hub
+     image: selenium/node-chrome
      image: openjdk:11.0.2
      pull: true
      
