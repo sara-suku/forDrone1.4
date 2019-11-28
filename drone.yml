@@ -3,10 +3,17 @@ type: docker
 name: linux-amd64
 
 services:
-- name: selenium
-  image: selenium/hub
-  image: selenium/node-chrome
+  hub:
+   image: selenium/hub:3.141.59-xenon
+   ports:
+     - "4444:4444"
 
+  chrome:
+    image: selenium/node-chrome:3.141.59-xenon
+    environment:
+      HUB_HOST: hub
+      HUB_PORT: 4444
+    
 platform:
   arch: amd64
   os: linux
