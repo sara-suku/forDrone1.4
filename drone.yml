@@ -15,7 +15,7 @@ steps:
      pull: true
      
      commands:
-       - ping 127.0.0.1:4444
+       - ping selenium:4444
        - java -version
        - chmod 777 ./lib/Drivers/chromedriver
        - chmod 777 ./Run.command
