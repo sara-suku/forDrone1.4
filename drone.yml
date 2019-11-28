@@ -1,33 +1,22 @@
 kind: pipeline
-name: default
+type: docker
+name: linux-amd64
 
 platform:
   arch: amd64
   os: linux
 
-pipeline:
-  test:
-    image: alpine/git
-    image: java:8-jdk
-    pull: true
-    commands:
-      - java -version      
-
-services:  
-  - name: seltest
-    selenium:
-          image: selenium/hub
-
-          chrome:
-            image: selenium/node-chrome
-            environment:
-              HUB_PORT_4444_TCP_ADDR: selenium
-              HUB_PORT_4444_TCP_PORT: 4444
-              DISPLAY: ":99.0"
-
-          firefox:
-            image: selenium/node-firefox
-            environment:
-              HUB_PORT_4444_TCP_ADDR: selenium
-              HUB_PORT_4444_TCP_PORT: 4444
-              DISPLAY: ":98.0"
+steps:
+  -  name: test
+     image: alpine/git
+     image: openjdk:11.0.2
+     pull: true
+     
+     commands:
+       - chmod 777 ./Run.command
+       - chmod 777 ./lib/Drivers/chromedriver
+       - ./Run.command -run -project_location "Projects/DemoProject" -scenario "AngularJS_Support" -testcase "AngularJS_Test" -browser "Chrome Headless"
+when:
+    event:
+      - push
+      - tag
