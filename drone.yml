@@ -7,10 +7,9 @@ platform:
   os: linux
   
 services:  
-  - name: seltest
-      image: selenium/hub
-        chrome:
-        image: selenium/node-chrome
+  image: selenium/hub
+  chrome:
+    image: selenium/node-chrome
       
 
 steps:
