@@ -5,8 +5,6 @@ name: linux-amd64
 services:
    -  name: hub
       image: selenium/hub:3.141.59-xenon
-        ports:
-          - "4444:4444"
 
       chrome:
           image: selenium/node-chrome:3.141.59-xenon
