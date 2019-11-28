@@ -1,9 +1,6 @@
 kind: pipeline
 name: default
 
-services:  
-  selenium:
-          image: selenium/standalone-chrome:3.141.59-vanadium 
 platform:
   arch: amd64
   os: linux
@@ -14,4 +11,9 @@ pipeline:
     image: java:8-jdk
     pull: true
     commands:
-      - java -version
+      - java -version      
+
+services:  
+  - name: seltest
+    selenium:
+          image: selenium/standalone-chrome:3.141.59-vanadium 
