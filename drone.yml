@@ -15,7 +15,7 @@ steps:
      commands:
        - chmod 777 ./Run.command
        - chmod 777 ./lib/Drivers/chromedriver
-       - ./Run.command -run -project_location "Projects/DemoProject" -scenario "AngularJS_Support" -testcase "AngularJS_Test" -browser "Chrome Headless"
+       - ./Run.command -run -project_location "Projects/DemoProject" -scenario "AngularJS_Support" -testcase "AngularJS_Test" -browser "Firefox"
 when:
     event:
       - push
