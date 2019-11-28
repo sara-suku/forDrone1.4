@@ -6,7 +6,7 @@ services:
    -  name: hub
       image: selenium/hub:3.141.59-xenon
 
-      chrome:
+   -  name: chrome
           image: selenium/node-chrome:3.141.59-xenon
           environment:
             HUB_HOST: hub
