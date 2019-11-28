@@ -5,11 +5,9 @@ name: linux-amd64
 services:
    -  name: hub
       image: selenium/hub:3.141.59-xenon
+   
    -  name: node-chrome
       image: selenium/node-chrome:3.141.59-xenon
-        environment:
-          HUB_HOST: hub
-          HUB_PORT: 4444
     
 platform:
   arch: amd64
