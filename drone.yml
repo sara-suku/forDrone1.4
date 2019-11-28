@@ -6,10 +6,6 @@ platform:
   arch: amd64
   os: linux
 
-services:
-  selenium:
-      image: selenium/standalone-chrome:3.141.59-xenon
-  
 steps:
   -  name: test
      image: alpine/git
