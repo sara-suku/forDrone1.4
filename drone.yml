@@ -6,12 +6,6 @@ platform:
   arch: amd64
   os: linux
   
-services:  
-  image: selenium/hub
-  chrome:
-    image: selenium/node-chrome
-      
-
 steps:
   -  name: test
      image: alpine/git
